@@ -18,9 +18,9 @@ travis-ci = { repository = "serde-rs/json" }
 appveyor = { repository = "serde-rs/json" }
 
 [dependencies]
-serde = { git = "https://github.com/mesalock-linux/serde-sgx.git" }
-indexmap = { git = "https://github.com/mesalock-linux/indexmap-sgx.git", optional = true }
-itoa = { git = "https://github.com/mesalock-linux/itoa-sgx.git" }
+serde = { git = "https://github.com/veracruz-project/serde.git", branch = "veracruz", default-features = false }
+indexmap = { git = "https://github.com/veracruz-project/indexmap.git", branch = "veracruz", optional = true }
+itoa = { git = "https://github.com/veracruz-project/itoa.git", branch = "veracruz", default-features = false }
 ryu = "1.0"
 sgx_tstd = { rev = "v1.1.2", git = "https://github.com/apache/teaclave-sgx-sdk.git", optional = true }
 
@@ -46,9 +46,9 @@ features = ["raw_value"]
 ### FEATURES #################################################################
 
 [features]
-default = ["mesalock_sgx", "std"]
+default = ["std"]
 
-std = ["serde/std", "mesalock_sgx"]
+std = ["serde/std"]
 
 # Provide integration for heap-allocated collections without depending on the
 # rest of the Rust standard library.
@@ -79,4 +79,4 @@ raw_value = []
 # limited to, Display and Debug and Drop impls.
 unbounded_depth = []
 
-mesalock_sgx = ["sgx_tstd"]
+mesalock_sgx = ["sgx_tstd", "serde/mesalock_sgx", "indexmap/mesalock_sgx", "itoa/mesalock_sgx"]
