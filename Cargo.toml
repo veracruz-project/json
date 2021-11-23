@@ -18,9 +18,9 @@ travis-ci = { repository = "serde-rs/json" }
 appveyor = { repository = "serde-rs/json" }
 
 [dependencies]
-serde = { git = "https://github.com/veracruz-project/serde.git", branch = "veracruz", default-features = false }
-indexmap = { git = "https://github.com/veracruz-project/indexmap.git", branch = "veracruz", optional = true }
-itoa = { git = "https://github.com/veracruz-project/itoa.git", branch = "veracruz", default-features = false }
+serde = { git = "https://github.com/veracruz-project/serde.git", branch = "veracruz-v1", default-features = false }
+indexmap = { git = "https://github.com/veracruz-project/indexmap.git", branch = "veracruz-v1", optional = true }
+itoa = { git = "https://github.com/veracruz-project/itoa.git", branch = "veracruz-v1", default-features = false }
 ryu = "1.0"
 sgx_tstd = { rev = "v1.1.2", git = "https://github.com/apache/teaclave-sgx-sdk.git", optional = true }
 
